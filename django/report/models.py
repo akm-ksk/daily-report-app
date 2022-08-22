@@ -19,6 +19,7 @@ class Report(models.Model):
     improvement = models.TextField('改善点', blank=True)
     word = models.TextField('言葉', blank=True)
     evaluation = models.CharField('評価', choices=Evaluation, max_length=9)
+    isOpen = models.BooleanField('公開', default=True)
 
     def __str__(self):
         date_str = self.date.strftime('%Y/%m/%d')
