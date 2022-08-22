@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from report.models import Report
+from .models import Report
 
 # Register your models here.
 admin.site.register(Report)
