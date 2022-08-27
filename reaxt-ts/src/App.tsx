@@ -18,7 +18,7 @@ function App() {
                     <Route path="/" element={<TopPage/>}/>
                     <Route path="/report/" element={<ReportTop/>}/>
                     <Route path="/report/:id" element={<ReportDetail/>}/>
-                    <Route path="/report/category/:cat" element={<CategoryView/>}/>
+                    <Route path="/report/category/:category" element={<CategoryView/>}/>
                     <Route path="*" element={<NotFoundPage/>}/>
                 </Routes>
                 <Footer/>
