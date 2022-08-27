@@ -2,11 +2,12 @@ import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {CategoryContent} from "../components/CategoryContent";
 import {reportCategoryItem} from "../type/reportCategoryItem";
+import {CategoryList} from "../components/CategoryList";
 
 export const CategoryView = () => {
     const [reports, setReports] = useState<reportCategoryItem[]>()
     const {category} = useParams()
-    
+
 
     useEffect(() => {
         const get = (async () => {
@@ -20,6 +21,7 @@ export const CategoryView = () => {
     return (
         <>
             {reports?.map(report => <CategoryContent key={report.date} {...report} />)}
+            <CategoryList/>
         </>
     )
 }
