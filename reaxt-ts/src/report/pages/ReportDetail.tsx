@@ -8,6 +8,7 @@ export const ReportDetail = () => {
     const {id} = useParams()
 
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const get = (async () => {
             const res = await fetch(`http://localhost:8000/report/${id}/`)
             const json = await res.json()

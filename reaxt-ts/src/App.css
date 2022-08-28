@@ -4,11 +4,16 @@
 }
 
 *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
     box-sizing: border-box
 }
 
 a, button {
-    cursor: revert
+    cursor: revert;
+    text-decoration: none;
+
 }
 
 ol, ul, menu {

@@ -10,6 +10,7 @@ export const CategoryView = () => {
 
 
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const get = (async () => {
             const res = await fetch(`http://localhost:8000/report/${category}/`)
             const json = await res.json()
