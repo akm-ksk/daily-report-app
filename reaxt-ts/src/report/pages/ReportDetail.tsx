@@ -1,7 +1,11 @@
+/** @jsxImportSource @emotion/react */
 import {useEffect, useState} from "react";
 import {TypeReportDetail} from "../type/reportDetail";
 import {useParams} from "react-router-dom";
 import {ReportItem} from "../components/ReportItem";
+import {CategoryList} from "../components/CategoryList";
+import {mainSec} from "../css/mainSec";
+import {listStyle} from "../css/listStyle";
 
 export const ReportDetail = () => {
     const [detail, setDetail] = useState<TypeReportDetail>()
@@ -17,14 +21,17 @@ export const ReportDetail = () => {
     }, [id])
 
     return (
-        <div>
-            <h1>{detail?.id ? detail?.date : 'レポートが存在しません'}</h1>
-            {detail?.work ? <ReportItem title="仕事" text={detail.work}/> : null}
-            {detail?.study ? <ReportItem title="勉強" text={detail.study}/> : null}
-            {detail?.good ? <ReportItem title="よかったこと" text={detail.good}/> : null}
-            {detail?.bad ? <ReportItem title="悪かったこと" text={detail.bad}/> : null}
-            {detail?.improvement ? <ReportItem title="改善" text={detail.improvement}/> : null}
-            {detail?.word ? <ReportItem title="ひとこと" text={detail.word}/> : null}
-        </div>
+        <section css={mainSec}>
+            <div css={listStyle}>
+                <h1>{detail?.id ? detail?.date : 'レポートが存在しません'}</h1>
+                {detail?.work ? <ReportItem title="仕事" text={detail.work}/> : null}
+                {detail?.study ? <ReportItem title="勉強" text={detail.study}/> : null}
+                {detail?.good ? <ReportItem title="よかったこと" text={detail.good}/> : null}
+                {detail?.bad ? <ReportItem title="悪かったこと" text={detail.bad}/> : null}
+                {detail?.improvement ? <ReportItem title="改善" text={detail.improvement}/> : null}
+                {detail?.word ? <ReportItem title="ひとこと" text={detail.word}/> : null}
+            </div>
+            <CategoryList/>
+        </section>
     )
 }

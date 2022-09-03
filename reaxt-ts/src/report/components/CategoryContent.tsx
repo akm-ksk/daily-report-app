@@ -1,11 +1,24 @@
+/** @jsxImportSource @emotion/react */
 import {reportCategoryItem} from "../type/reportCategoryItem";
+import {css} from "@emotion/react";
 
 export const CategoryContent = (props: reportCategoryItem) => {
     const {date, content} = props
     return (
-        <div>
-            {content ? <h2>{date}</h2> : null}
-            {content ? <p>{content}</p> : null}
-        </div>
+        <>
+            {
+                content ?
+                    <li>
+                        <h2 css={title}>{date}</h2>
+                        <p>{content}</p>
+                    </li>
+                    :
+                    null
+            }
+        </>
     )
 }
+
+const title = css({
+    margin: '0 0 15px',
+})
